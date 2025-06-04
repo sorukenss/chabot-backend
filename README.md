@@ -21,7 +21,8 @@ Antes de comenzar, asegúrate de tener instalado:
 
 - **Node.js** (v18 o superior)
 - **npm** (viene con Node.js)
-- **Docker** (opcional pero recomendado para MySQL)
+- **Docker** (Obligatorio para crear la bd de MySQL)
+- **Docker Compose** (Obligatorio para ejecutar la imagen de la bd de MySQL)
 
 ---
 
