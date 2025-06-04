@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  chatbot-mysql:
+    image: mysql:8.0
+    container_name: chatbot-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: chatbot
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 123456
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: unless-stopped
+
+volumes:
+  mysql_data:

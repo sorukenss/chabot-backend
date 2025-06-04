@@ -9,17 +9,30 @@ const options = {
       version: '1.0.0',
       description: 'API para interactuar con un chatbot usando mensajes almacenados.',
     },
-    servers: [
-      {
-        url: 'http://localhost:3000',
-        description: 'Servidor local',
+    components: {
+      schemas: {
+        Message: {
+          type: 'object',
+          properties: {
+            id: { type: 'integer', format: 'int64', description: 'ID único del mensaje' },
+            content: { type: 'string', description: 'Contenido del mensaje' },
+            sender: { type: 'string', enum: ['USER', 'BOT'], description: 'Remitente del mensaje' },
+            createdAt: { type: 'string', format: 'date-time', description: 'Fecha y hora de creación' },
+          },
+          required: ['content', 'sender'],
+          example: {
+            id: 1,
+            content: 'Hola, ¿cómo estás?',
+            sender: 'USER',
+            createdAt: '2025-04-06T12:00:00Z',
+          },
+        },
       },
-    ],
+    },
   },
-  apis: ['./src/routes/*.ts'],
+  apis: ['./src/controllers/*.ts'],
 };
 
 const swaggerSpec = swaggerJsDoc(options);
 
-// ✅ Exporta como módulo ES
 export { swaggerSpec, swaggerUi };
