@@ -6,7 +6,7 @@ proyecto backend hecho con:
 ✅ MySQL \
 ✅ Swagger UI (documentación) \
 ✅ Integración con una IA externa \
-Este README te ayudará a que los evaluadores entiendan fácilmente qué hace tu backend, cómo instalarlo, ejecutarlo y probarlo. \
+Este README te ayudará a que los evaluadores entiendan fácilmente qué hace tu backend, cómo instalarlo, ejecutarlo y probarlo. 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
 🧠 Chatbot Backend - Prueba Técnica
@@ -32,10 +32,10 @@ Docker (opcional pero recomendado para MySQL) \
 🚀 Instalación
 1. Clona el repositorio \
  git clone https://github.com/sorukenss/chabot-backend  \
-cd chatbot-backend \
+cd chatbot-backend 
 ---------------------------------------------------------------------------------------------
 2. Instala dependencias \
-    npm install \
+    npm install 
 -----------------------------------------------------------------------------------------
 3. Configura las variables de entorno
 Crea un archivo .env en la raíz del proyecto: \
@@ -44,7 +44,7 @@ DB_HOST=localhost \
 DB_PORT=3306 \
 DB_USER=root \
 DB_PASSWORD=123456 \
-DB_NAME=chatbot \
+DB_NAME=chatbot 
 -------------------------------------------------------------------------------------------------------------
 🐳 Despliegue local con Docker (recomendado)
 Puedes levantar una base de datos MySQL local con Docker:
@@ -70,14 +70,8 @@ CREATE TABLE messages ( \
 
 luego esto para ver la tabla : DESCRIBE messages; \
 debe de verse algo asi 
-+------------+------------------+------+-----+-------------------+-----------------------------+
-| Field      | Type             | Null | Key | Default           | Extra                       |
-+------------+------------------+------+-----+-------------------+-----------------------------+
-| id_message | int              | NO   | PRI | NULL              | auto_increment              |
-| content    | text             | NO   |     | NULL              |                             |
-| sender     | enum('bot','user')| NO   |     | NULL              |                             |
-| created_at | timestamp        | YES  |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
-+------------+------------------+------+-----+-------------------+-----------------------------+
+![image](https://github.com/user-attachments/assets/0291d1d8-1c2d-40fd-8cd8-4d70c4d61cc6)
+
 salimos con el siguiente comando : exit;
 ----------------------------------------------------------------------------------------------------------------------
 🛠️ Estructura del Proyecto
