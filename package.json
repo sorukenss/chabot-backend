@@ -9,6 +9,7 @@
     "dev": "nodemon src/index.ts",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write src/**/*.ts",
+    "postinstall": "prisma generate",
     "prisma:generate": "npx prisma generate",
     "prisma:migrate": "npx prisma migrate dev --name init"
   },
