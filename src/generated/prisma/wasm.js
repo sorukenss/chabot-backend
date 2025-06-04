@@ -120,7 +120,7 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.ChatmessageScalarFieldEnum = {
+exports.Prisma.ChatMessageScalarFieldEnum = {
   id: 'id',
   content: 'content',
   sender: 'sender',
@@ -132,7 +132,7 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
-exports.Prisma.chatmessageOrderByRelevanceFieldEnum = {
+exports.Prisma.ChatMessageOrderByRelevanceFieldEnum = {
   content: 'content'
 };
 exports.Role = exports.$Enums.Role = {
@@ -141,7 +141,7 @@ exports.Role = exports.$Enums.Role = {
 };
 
 exports.Prisma.ModelName = {
-  chatmessage: 'chatmessage'
+  ChatMessage: 'ChatMessage'
 };
 
 /**

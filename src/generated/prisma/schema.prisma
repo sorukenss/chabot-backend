@@ -14,7 +14,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model chatmessage {
+model ChatMessage {
   id         Int      @id @default(autoincrement())
   content    String
   sender     Role

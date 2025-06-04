@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import prisma from '../index'
+import prisma from '../prisma-scheme'
 import { getOpenAIResponse } from '../services/openai.service';
 
 
@@ -21,7 +21,7 @@ import { getOpenAIResponse } from '../services/openai.service';
  */
 export const getMessages = async (req: Request, res: Response) => {
   try {
-    const messages = await prisma.chatmessage.findMany({
+    const messages = await prisma.chatMessage.findMany({
       orderBy: { created_at: 'asc' },
     });
     res.json(messages);
@@ -63,7 +63,7 @@ export const createMessage = async (req: Request, res: Response) => {
   if (!content) return res.status(400).json({ error: 'El contenido es requerido' });
 
   try {
-    const userMessage = await prisma.chatmessage.create({
+    const userMessage = await prisma.chatMessage.create({
       data: {
         content,
         sender: 'user',
@@ -72,7 +72,7 @@ export const createMessage = async (req: Request, res: Response) => {
 
     const botResponse = await getOpenAIResponse(content);
 
-    const botMessage = await prisma.chatmessage.create({
+    const botMessage = await prisma.chatMessage.create({
       data: {
         content: botResponse,
         sender: 'bot',
