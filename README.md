@@ -158,11 +158,11 @@ La documentación incluye:
 chatbot-backend/
 ├── src/
 │   ├── controllers/     # Lógica de controladores
-│   ├── models/         # Modelos de base de datos
 │   ├── routes/         # Definición de rutas
 │   ├── config/         # Configuración de BD y servicios
 │   └── app.ts          # Configuración principal
 ├── .env                # Variables de entorno
+├── .docker-compose      # crear la imagen de la bd
 ├── package.json        # Dependencias del proyecto
 └── README.md          # Este archivo
 ```
