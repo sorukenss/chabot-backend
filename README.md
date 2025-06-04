@@ -76,20 +76,8 @@ salimos con el siguiente comando : exit;
 ----------------------------------------------------------------------------------------------------------------------
 🛠️ Estructura del Proyecto
 
-src/
-├── index.ts              # Punto de entrada \
-├── server.ts             # Configuración del servidor Express \
-├── routes/               # Rutas RESTful \
-│   └── message.route.ts
-├── controllers/          # Lógica de controladores \
-│   └── message.controller.ts \
-├── services/             # Servicios de negocio \
-│   └── openai.service.ts \
-├── config/               # Configuración de la base de datos \
-│   └── db.config.ts \
-├── models/               # Modelos de base de datos \
-│   └── message.model.ts \
-└── swagger.ts            # Configuración de Swagger \
+![image](https://github.com/user-attachments/assets/d40e3dc5-cedd-4de9-974c-ee919a7106ed)
+
 -----------------------------------------------------------------------------------------------------------------
 👥 Desarrollado por Isaac Pimienta Morales \
 📧 isaacpimienta358@gmail.com \
