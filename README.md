@@ -201,16 +201,6 @@ npm run lint
 
 ---
 
-## 🤝 Contribución
-
-1. **Fork** del proyecto
-2. Crea una **rama feature** (`git checkout -b feature/nueva-funcionalidad`)
-3. **Commit** tus cambios (`git commit -m 'Añadir nueva funcionalidad'`)
-4. **Push** a la rama (`git push origin feature/nueva-funcionalidad`)
-5. Abre un **Pull Request**
-
----
-
 ## 👨‍💻 Desarrollado por
 
 **Isaac Pimienta Morales**
@@ -220,10 +210,3 @@ npm run lint
 
 ---
 
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
-
----
-
-**¿Necesitas ayuda?** Abre un issue en el repositorio o contacta al desarrollador.
