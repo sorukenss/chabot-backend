@@ -27,3 +27,4 @@ app.get('/', (req, res) => {
     res.redirect('/api-docs');
 });
 exports.default = app;
+//# sourceMappingURL=server.js.map

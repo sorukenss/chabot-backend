@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import prisma from '../prisma-scheme'
+import prisma from '../prisma';
 import { getOpenAIResponse } from '../services/openai.service';
 
 

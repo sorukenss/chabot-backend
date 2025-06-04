@@ -10,3 +10,4 @@ router.post('/', (req, res) => {
     (0, message_controller_1.createMessage)(req, res);
 });
 exports.default = router;
+//# sourceMappingURL=message.route.js.map

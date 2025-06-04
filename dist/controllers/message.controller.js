@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createMessage = exports.getMessages = void 0;
-const prisma_scheme_1 = __importDefault(require("../prisma-scheme"));
+const prisma_1 = __importDefault(require("../prisma"));
 const openai_service_1 = require("../services/openai.service");
 /**
  * @openapi
@@ -24,7 +24,7 @@ const openai_service_1 = require("../services/openai.service");
  */
 const getMessages = async (req, res) => {
     try {
-        const messages = await prisma_scheme_1.default.chatMessage.findMany({
+        const messages = await prisma_1.default.chatMessage.findMany({
             orderBy: { created_at: 'asc' },
         });
         res.json(messages);
@@ -66,14 +66,14 @@ const createMessage = async (req, res) => {
     if (!content)
         return res.status(400).json({ error: 'El contenido es requerido' });
     try {
-        const userMessage = await prisma_scheme_1.default.chatMessage.create({
+        const userMessage = await prisma_1.default.chatMessage.create({
             data: {
                 content,
                 sender: 'user',
             },
         });
         const botResponse = await (0, openai_service_1.getOpenAIResponse)(content);
-        const botMessage = await prisma_scheme_1.default.chatMessage.create({
+        const botMessage = await prisma_1.default.chatMessage.create({
             data: {
                 content: botResponse,
                 sender: 'bot',
@@ -87,3 +87,4 @@ const createMessage = async (req, res) => {
     }
 };
 exports.createMessage = createMessage;
+//# sourceMappingURL=message.controller.js.map
