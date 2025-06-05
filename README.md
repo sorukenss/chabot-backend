@@ -210,9 +210,6 @@ chatbot-backend/
 ├── package.json            # Dependencias
 └── README.md              # Este archivo
 ```
-
-![image](https://github.com/user-attachments/assets/d40e3dc5-cedd-4de9-974c-ee919a7106ed)
-
 ---
 
 ## ⚠️ Solución de Problemas
