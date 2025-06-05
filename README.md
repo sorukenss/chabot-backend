@@ -62,6 +62,8 @@ Abrimos la terminal Para ejecutar todos los comandos de docker.
 ```bash
 docker run --name chatbot-mysql -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=chatbot -p 3307:3306 -d mysql:8.0
 ```
+![image](https://github.com/user-attachments/assets/4c99aafa-4e91-4941-9a06-02d61ea79426)
+
 
 ### **Paso 2: Acceder al contenedor**
 
@@ -105,15 +107,21 @@ bash# Generar cliente de Prisma
 ```
 npx prisma generate
 ```
+![image](https://github.com/user-attachments/assets/a3cddd75-aecc-4afc-9ebd-1915c2cabc4c)
+
 # Aplicar migraciones iniciales
-Limpiamos la bd, luego de ejecutar el comando le damos Y, aceptamos
+Limpiamos la bd, luego de ejecutar el comando le damos (Y) o (yes), aceptamos
 ```
 npx prisma migrate reset
 ```
+![image](https://github.com/user-attachments/assets/4c353424-873d-49ae-a8f1-8d0fc509267a)
+
 luego ejecutramos el siguiente comando. Pasamos al paso 6 ejecutar la app.
 ```
 npx prisma migrate dev --name init
 ```
+![image](https://github.com/user-attachments/assets/6647777b-d89c-4ed1-ac41-8e35be48b0bf)
+
 ---
 🗄️ Esquema de Base de Datos (Prisma)
 prisma// prisma/schema.prisma
