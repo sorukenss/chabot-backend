@@ -5,10 +5,10 @@ import messageRouter from './routes/message.route';
 import { swaggerUi, swaggerSpec } from './swagger';
 
 const corsOptions = {
-  origin: 'http://localhost:5173', // Solo permite este origen
-  methods: ['GET', 'POST'],         // Solo estos métodos
-  allowedHeaders: ['Content-Type', 'Authorization'], // Solo estos headers
-  credentials: true,                // Permitir cookies si las usas
+  origin: 'http://localhost:5173', 
+  methods: ['GET', 'POST'],         
+  allowedHeaders: ['Content-Type', 'Authorization'], 
+  credentials: true,                
 };
 
 dotenv.config();
