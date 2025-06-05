@@ -58,7 +58,7 @@ DB_NAME=chatbot
 ### 4 🐳 Configuración de Base de Datos con Docker
 
 ### **Paso 1: Crear contenedor MySQL**
-
+Abrimos la terminal Para ejecutar todos los comandos de docker.
 ```bash
 docker run --name chatbot-mysql -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=chatbot -p 3307:3306 -d mysql:8.0
 ```
@@ -106,6 +106,11 @@ bash# Generar cliente de Prisma
 npx prisma generate
 ```
 # Aplicar migraciones iniciales
+Limpiamos la bd, luego de ejecutar el comando le damos Y, aceptamos
+```
+npx prisma migrate reset
+```
+luego ejecutramos el siguiente comando. Pasamos al paso 6 ejecutar la app.
 ```
 npx prisma migrate dev --name init
 ```
@@ -128,25 +133,6 @@ enum Sender {
   bot
 }
 ```
-Comandos Prisma útiles:
-bash# Ver estado de migraciones
-```
-npx prisma migrate status
-```
-# Aplicar migraciones en producción
-```
-npx prisma migrate deploy
-```
-# Abrir interfaz visual de BD
-```
-npx prisma studio
-```
-# Generar migración desde cambios en schema
-```
-npx prisma db push
-```
----
-
 ### 6. 🏃‍♂️ Ejecutar la Aplicación
 
 ### **Modo desarrollo**
@@ -156,6 +142,7 @@ npm run dev
 ```
 
 **El servidor estará disponible en:** `http://localhost:3000`
+**Listo nuestro back en nuestro servidor local**
 
 ---
 
@@ -217,24 +204,6 @@ chatbot-backend/
 ```
 
 ![image](https://github.com/user-attachments/assets/d40e3dc5-cedd-4de9-974c-ee919a7106ed)
-
----
-
-## 🔧 Scripts Disponibles
-
-```bash
-# Desarrollo con hot-reload
-npm run dev
-
-# Compilar TypeScript
-npm run build
-
-# Ejecutar en producción
-npm start
-
-# Linting de código
-npm run lint
-```
 
 ---
 
