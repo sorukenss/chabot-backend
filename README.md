@@ -12,6 +12,7 @@
 - **Swagger UI** - Documentación interactiva de la API
 - **Cors** - Soporte para solicitudes cross-origin
 - **Dotenv** - Gestión de variables de entorno
+- **Prisma ORM** - ORM moderno type-safe para base de datos
 
 ---
 
@@ -53,10 +54,8 @@ DB_USER=root
 DB_PASSWORD=123456
 DB_NAME=chatbot
 ```
-
 ---
-
-## 🐳 Configuración de Base de Datos con Docker
+### 4 🐳 Configuración de Base de Datos con Docker
 
 ### **Paso 1: Crear contenedor MySQL**
 
@@ -100,22 +99,60 @@ DESCRIBE messages;
 ```sql
 exit;
 ```
+---
+ ### 5. 🌐Configurar Prisma ORM
+bash# Generar cliente de Prisma
+```
+npx prisma generate
+```
+# Aplicar migraciones iniciales
+```
+npx prisma migrate dev --name init
+```
+---
+🗄️ Esquema de Base de Datos (Prisma)
+prisma// prisma/schema.prisma
+```
+model Message {
+  id        Int      @id @default(autoincrement())
+  content   String   @db.Text
+  sender    Sender
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
+  @@map("messages")
+}
+
+enum Sender {
+  user
+  bot
+}
+```
+Comandos Prisma útiles:
+bash# Ver estado de migraciones
+```
+npx prisma migrate status
+```
+# Aplicar migraciones en producción
+```
+npx prisma migrate deploy
+```
+# Abrir interfaz visual de BD
+```
+npx prisma studio
+```
+# Generar migración desde cambios en schema
+```
+npx prisma db push
+```
 ---
 
-## 🏃‍♂️ Ejecutar la Aplicación
+### 6. 🏃‍♂️ Ejecutar la Aplicación
 
 ### **Modo desarrollo**
 
 ```bash
 npm run dev
-```
-
-### **Modo producción**
-
-```bash
-npm run build
-npm start
 ```
 
 **El servidor estará disponible en:** `http://localhost:3000`
@@ -157,14 +194,26 @@ La documentación incluye:
 ```
 chatbot-backend/
 ├── src/
-│   ├── controllers/     # Lógica de controladores
-│   ├── routes/         # Definición de rutas
-│   ├── config/         # Configuración de BD y servicios
-│   └── app.ts          # Configuración principal
-├── .env                # Variables de entorno
-├── .docker-compose      # crear la imagen de la bd
-├── package.json        # Dependencias del proyecto
-└── README.md          # Este archivo
+│   ├── controllers/          # Lógica de controladores
+│   │   └── message.controller.ts
+│   ├── routes/               # Rutas RESTful
+│   │   └── message.route.ts
+│   ├── services/             # Servicios de negocio
+│   │   └── openai.service.ts
+│   ├── prisma/               # Configuración Prisma
+│   │   ├── schema.prisma     # Esquema de BD
+│   │   └── prisma-client.ts  # Cliente configurado
+│   ├── types/               # Definiciones TypeScript
+│   ├── swagger.ts           # Configuración Swagger
+│   ├── server.ts            # Configuración Express
+│   └── index.ts             # Punto de entrada
+├── prisma/
+│   ├── migrations/          # Migraciones de BD
+│   └── schema.prisma        # Esquema principal
+├── docker-compose.yml       # Configuración Docker
+├── .env                     # Variables de entorno
+├── package.json            # Dependencias
+└── README.md              # Este archivo
 ```
 
 ![image](https://github.com/user-attachments/assets/d40e3dc5-cedd-4de9-974c-ee919a7106ed)
